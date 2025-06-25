@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link in Bio Generator - Create Your Bio Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-pink-100 min-h-screen">
+    <div class="container mx-auto px-8 py-16">
+        <!-- Header -->
+        <div class="text-center mb-20">
+            <h1 class="text-6xl font-bold text-purple-600 mb-8">
+                <i class="fas fa-link mr-6"></i>Link in Bio Generator
+            </h1>
+            <p class="text-gray-600 text-2xl">Create beautiful mobile-friendly bio pages with unlimited links</p>
+        </div>
+
+        <!-- Main Content with Ad Space -->
+        <div class="flex gap-8">
+            <!-- Main Content (70%) -->
+            <div class="flex-1">
+                <!-- Profile Section -->
+                <div class="bg-white rounded-2xl shadow-2xl p-12 mb-12">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-8 flex items-center">
+                        <i class="fas fa-user mr-4 text-purple-500"></i>Profile Information
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <label class="block text-gray-700 text-lg font-semibold mb-3">Profile Picture URL</label>
+                            <input type="text" id="profilePic" placeholder="https://example.com/your-photo.jpg" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500 focus:border-transparent transition-all duration-200">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 text-lg font-semibold mb-3">Your Name</label>
+                            <input type="text" id="profileName" placeholder="Your Name" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500 focus:border-transparent transition-all duration-200">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-gray-700 text-lg font-semibold mb-3">Bio Description</label>
+                        <textarea id="profileBio" placeholder="Tell people about yourself..." rows="3" class="w-full px-6 py-4 border-2 border-gray-300 rounded-xl focus:outline-none focus:ring-4 focus:ring-purple-500 focus:border-transparent transition-all duration-200"></textarea>
+                    </div>
+                </div>
+
+                <!-- Links Section -->
+                <div class="bg-white rounded-2xl shadow-2xl p-12 mb-12">
+                    <div class="flex justify-between items-center mb-8">
+                        <h2 class="text-3xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-link mr-4 text-purple-500"></i>Your Links
+                        </h2>
+                        <button id="addLinkBtn" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 flex items-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <i class="fas fa-plus mr-2"></i>Add Link
+                        </button>
+                    </div>
+                    <div id="linksContainer" class="space-y-4">
+                        <!-- Links will be added here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="bg-white rounded-2xl shadow-2xl p-12 mb-12">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-8 flex items-center">
+                        <i class="fas fa-eye mr-4 text-purple-500"></i>Preview
+                    </h2>
+                    <div id="preview" class="bg-gray-50 rounded-2xl p-8 min-h-[400px]">
+                        <div class="text-center text-gray-500">
+                            <i class="fas fa-mobile-alt text-6xl mb-4"></i>
+                            <p class="text-xl">Your bio page preview will appear here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="bg-white rounded-2xl shadow-2xl p-12 mb-12">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <button id="saveBtn" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-6 px-8 rounded-2xl font-semibold text-xl transition-all duration-200 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:scale-105">
+                            <i class="fas fa-save mr-4"></i>Save to Browser
+                        </button>
+                        <button id="downloadBtn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-6 px-8 rounded-2xl font-semibold text-xl transition-all duration-200 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:scale-105">
+                            <i class="fas fa-download mr-4"></i>Download HTML
+                        </button>
+                        <button id="clearBtn" class="flex-1 bg-red-600 hover:bg-red-700 text-white py-6 px-8 rounded-2xl font-semibold text-xl transition-all duration-200 flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:scale-105">
+                            <i class="fas fa-trash mr-4"></i>Clear All
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Back to Home -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 text-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Back to Home</h3>
+                    <p class="text-gray-600 mb-6">Return to the main page</p>
+                    <a href="index.html" class="inline-block bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105">
+                        <i class="fas fa-home mr-3"></i>Go to Home Page
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ad Space (30%) -->
+            <div class="w-80 flex-shrink-0">
+                <!-- Single Advertisement Space -->
+                <div class="bg-white rounded-2xl shadow-2xl p-6 sticky top-8">
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg mb-4">
+                            <i class="fas fa-ad mr-2"></i>Advertisement
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-4 mb-4 min-h-[600px] flex items-center justify-center">
+                            <div class="text-center text-gray-500">
+                                <i class="fas fa-ad text-6xl mb-4"></i>
+                                <p class="text-xl font-semibold mb-2">Advertisement Space</p>
+                                <p class="text-lg mb-4">300x600 Banner Ad</p>
+                                <p class="text-sm">Perfect for Google AdSense</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-500">Sponsored Content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="link-in-bio-script.js"></script>
+</body>
+</html> 
